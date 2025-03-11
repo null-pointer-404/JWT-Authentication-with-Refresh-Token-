@@ -1,0 +1,35 @@
+
+---
+
+## 🔧 Installation
+
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/null-pointer-404/JWT-Authentication-with-Refresh-Token-.git
+cd JwtAuthMicroservice
+
+### 2️⃣ Install Dependencies
+dotnet restore
+
+### 3️⃣ Update appsettings.json
+Set up your database connection and JWT settings in appsettings.json:
+
+{
+  "Jwt": {
+    "Key": "your_secret_key_here",
+    "Issuer": "your_issuer",
+    "Audience": "your_audience"
+  },
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=your_server;Database=your_database;User Id=your_user;Password=your_password;"
+  }
+}
+
+### 4️⃣ Apply Migrations & Update Database
+
+dotnet tool install --global dotnet-ef  # (if not installed)
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+
+
+### 5️⃣ Run the API

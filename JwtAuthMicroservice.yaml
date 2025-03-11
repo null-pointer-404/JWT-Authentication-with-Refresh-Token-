@@ -33,3 +33,4 @@ dotnet ef database update
 
 
 ### 5️⃣ Run the API
+dotnet run
